@@ -6,3 +6,5 @@
 5. Квадратные (Quadratic): Algorithms whose time complexity grows quadratically with the size of the input. Examples include nested loops where each loop iterates over the size of the input. Denoted as O(n^2).
 6. Кубические (Cubic): Algorithms with time complexity that grows cubically with the size of the input. Denoted as O(n^3).
 */
+
+// 15:09 to continue...
