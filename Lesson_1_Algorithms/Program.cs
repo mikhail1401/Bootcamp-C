@@ -1,7 +1,7 @@
 ﻿/*
 1. Константные (Constant): O(1), O(2)
 Once assigned a value, it remains constant for the duration of the program.
-2. Логарифмические (Logarithmic): O(log n)  - Бинарный поиск
+2. Логарифмические (Logarithmic): O(log n)  - бинарный поиск
 Algorithms whose time complexity grows logarithmically with the size of the input. 
 Examples include binary search.
 3. Линейные (Linear): O(n), O(2*n)
@@ -11,7 +11,7 @@ Algorithms with time complexity that is a combination of linear and logarithmic 
 5. Квадратные (Quadratic): O(n^2)   - пузырьковая сортировка, сортировка выбором, сортировка вставками
 Algorithms whose time complexity grows quadratically with the size of the input. 
 Examples include nested loops where each loop iterates over the size of the input.
-6. Кубические (Cubic): O(n^3)
+6. Кубические (Cubic): O(n^3)   - трёхмерные массивы
 Algorithms with time complexity that grows cubically with the size of the input. 
 */
 
@@ -63,5 +63,17 @@ Console.WriteLine($"Sum of numbers from 1 to {n2} equals {(1 + n2) / 2 * n2}");
 // Быстрая сортировка 0(n * log2(n))   (Рекурисивный подход)
 // [34, -10, 23, 5, 2, 1]
 // 1. Выбирается опорный эелемент (в основном берется первый эелемент массива)
-// 2. Создается 2 массива. 1-ый массив содержит эелементы меньше опорного,
-// 2-ой массив содержит элементы больше или равные опорному.
+// 2. Создается 2 массива. 1-ый массив содержит эелементы меньше опорного (слева от опорного),
+// 2-ой массив содержит элементы больше или равные опорному (справа от опорного).
+
+// Опорный элемент равен 34.
+// [-10, 23, 5, 2, 1] + [34] + []       [-10, 1, 2, 5, 23, 34]
+// Делаем тоже самое с массивом с эелементами
+// Опорный элемент -10
+// [] + [-10] + [23, 5, 2, 1]   [-10, 1, 2, 5, 23]
+// Опорный эелемент 23 
+// [5, 2, 1] + [23] + []    [1, 2, 5, 23]
+// Опорный элемент 5    
+// [2, 1] + [5] + []    [1, 2, 5]
+// Опорный эелемент 2   
+// [1] + [2] + []       [1, 2] - Result adds from bottop to top respecting left/right array positions
