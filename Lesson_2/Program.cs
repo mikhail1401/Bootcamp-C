@@ -49,13 +49,12 @@ Console.WriteLine("\nFinding an array's sum by sorting it first - " +
 
 // O(n^2)
 Console.WriteLine("\nMultiplication table - O(n^2)");
-int[,] matrix = new int[n, n];
-for (int i = 1; i < matrix.GetLength(0); i++)
+
+for (int i = 1; i <= n; i++)
 {
-    for (int j = 1; j < matrix.GetLength(1); j++)
+    for (int j = 1; j <= n; j++)
     {
-        matrix[i, j] = i * j;
-        Console.Write(matrix[i, j] + " ");
+        Console.Write(i*j + "\t");
     }
     Console.WriteLine();
 }
