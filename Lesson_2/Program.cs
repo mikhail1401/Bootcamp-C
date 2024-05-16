@@ -59,6 +59,8 @@ for (int i = 1; i <= n; i++)
     Console.WriteLine();
 }
 
+// O(n^2 / 2)
+// More efficient algorithm
 Console.WriteLine("\nWe can refine the previous algorithm");
 int[,] matrix = new int[n,n];
 
@@ -79,5 +81,3 @@ for (int i = 0; i < n; i++)
     }
     Console.WriteLine();
 }
-
-// Continue from 39:30
