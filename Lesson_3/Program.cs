@@ -63,9 +63,7 @@ void inputArray(int[] array)
 Console.Write("\nEnter a number of elements in the array: ");
 int n = int.Parse(Console.ReadLine()!);
 int[] randomArray = new int[n];
-Console.WriteLine("Filled array before soritng: ");
 inputArray(randomArray);
-Console.WriteLine(string.Join(" ", randomArray));
-Console.WriteLine("After sorting: ");
+Console.WriteLine($"Filled array before soritng: [{string.Join(", ", randomArray)}]");
 int[] sortedRandomArray = sortSelection(randomArray);
-Console.WriteLine(string.Join(" ", sortedRandomArray));
+Console.WriteLine($"After soritng: [{string.Join(", ", sortedRandomArray)}]");
