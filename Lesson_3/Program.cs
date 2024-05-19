@@ -32,8 +32,23 @@ int[] sortSelection(int[] array)
     // Standard names for loop counters are i, j, k, m, n
     for (int i = 0; i < array.Length; i++)
     {
-        int index = i;
+        int indexMin = i;
         for (int j = i; j < array.Length; j++)
+        {
+            if (array[j] < array[indexMin])
+                indexMin = j;
+        }
+        if (array[indexMin] == array[i])
+            continue; // means go to the next iteration of the loop
+
+        int temp = array[indexMin];
+        array[indexMin] = array[i];
+        array[i] = temp;
     }
+    return array;
 }
 
+int[] array1 = {-10, 1, 3, 5, 9, 45, 23};
+int[] array2 = sortSelection(array1);
+string result = string.Join(" ", array2);
+Console.WriteLine(result);
