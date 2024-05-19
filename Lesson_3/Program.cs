@@ -48,7 +48,7 @@ int[] sortSelection(int[] array)
     return array;
 }
 
-int[] array1 = {-10, 1, 3, 5, 9, 45, 23};
+int[] array1 = {45, 23, -10, 5, 3, 9, 1};
 int[] array2 = sortSelection(array1);
 string result = string.Join(" ", array2);
 Console.WriteLine(result);
