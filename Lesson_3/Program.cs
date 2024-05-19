@@ -52,3 +52,20 @@ int[] array1 = {45, 23, -10, 5, 3, 9, 1};
 int[] array2 = sortSelection(array1);
 string result = string.Join(" ", array2);
 Console.WriteLine(result);
+
+// Same thing, but with a function creating random arrays
+void inputArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i ++)
+        array[i] = new Random().Next(-20, 21);
+}
+
+Console.Write("\nEnter a number of elements in the array: ");
+int n = int.Parse(Console.ReadLine()!);
+int[] randomArray = new int[n];
+Console.WriteLine("Filled array before soritng: ");
+inputArray(randomArray);
+Console.WriteLine(string.Join(" ", randomArray));
+Console.WriteLine("After sorting: ");
+int[] sortedRandomArray = sortSelection(randomArray);
+Console.WriteLine(string.Join(" ", sortedRandomArray));
