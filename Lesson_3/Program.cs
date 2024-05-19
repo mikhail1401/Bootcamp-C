@@ -64,5 +64,5 @@ Console.Write("\nEnter a number of elements in the array: ");
 int n = int.Parse(Console.ReadLine()!);
 int[] userArray = new int[n];
 inputArray(userArray);
-Console.WriteLine($"Filled array before soritng: [{string.Join(", ", userArray)}]");
-Console.WriteLine($"After soritng: [{string.Join(", ", sortSelection(userArray))}]");
+Console.WriteLine($"Initial array: [{string.Join(", ", userArray)}]");
+Console.WriteLine($"Sorted array: [{string.Join(", ", sortSelection(userArray))}]");
