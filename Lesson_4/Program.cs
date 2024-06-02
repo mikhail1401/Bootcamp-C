@@ -2,7 +2,7 @@
 
 // Bubble sort - Пузырьковая сортировка
 
-// Creating a Unit test that will verify whethe an array is sorted
+// Creating a Unit test that will verify whether an array is sorted
 bool Check(int[] array)
 {
     int size = array.Length;
@@ -36,7 +36,7 @@ Console.Write("Our initial array: ");
 Console.WriteLine($"[{String.Join(", ", array)}]");
 
 // Creating a boolean to show sorted lists, 
-// so we can disable it when the lists a too big
+// so we can disable it when the lists are too long
 bool show = !true;
 
 // Creating a timer
@@ -46,9 +46,9 @@ Stopwatch sw = new Stopwatch();
 // I. Sorting the array - O((n-1)^2)
 sw.Start();
 
-for (int k = 0; k < n - 1; k++) // Outer loop O(n-1)
-    for (int i = 0; i < n - 1; i++) // Inner loop O(n-1)
-    {
+for (int k = 0; k < n - 1; k++) // Outer loop O(n-1)   - represents number of passes
+    for (int i = 0; i < n - 1; i++) // Inner loop O(n-1) - iterates over the array
+    {                                                   
         if (array1[i] > array1[i+1])
         {
             int temp = array1[i];
