@@ -48,7 +48,7 @@ int[] sortSelection(int[] array)
     return array;
 }
 
-int[] array1 = {45, 23, -10, 5, 3, 9, 1};
+int[] array1 = { 45, 23, -10, 5, 3, 9, 1 };
 int[] array2 = sortSelection(array1);
 string result = string.Join(" ", array2);
 Console.WriteLine(result);
@@ -56,7 +56,7 @@ Console.WriteLine(result);
 // Same thing, but with a function creating random arrays
 void inputArray(int[] array)
 {
-    for (int i = 0; i < array.Length; i ++)
+    for (int i = 0; i < array.Length; i++)
         array[i] = new Random().Next(-20, 21);
 }
 

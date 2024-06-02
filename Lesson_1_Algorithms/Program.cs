@@ -1,4 +1,5 @@
 ﻿/*
+Algorithms. Big O notation
 1. Константные (Constant): O(1), O(2)
 Once assigned a value, it remains constant for the duration of the program.
 2. Логарифмические (Logarithmic): O(log n)  - бинарный поиск
@@ -6,9 +7,9 @@ Algorithms whose time complexity grows logarithmically with the size of the inpu
 Examples include binary search.
 3. Линейные (Linear): O(n), O(2*n)
 Algorithms where the time taken increases linearly with the size of the input.
-4. Линейно-логарифмические (Linearithmic): O(n log n)   - Быстра сортировка 
+4. Линейно-логарифмические (Linearithmic): O(n log n)   - Быстрая сортировка 
 Algorithms with time complexity that is a combination of linear and logarithmic growth.
-5. Квадратные (Quadratic): O(n^2)   - пузырьковая сортировка, сортировка выбором, сортировка вставками
+5. Квадратные (Quadratic): O(n^2)   - пузырьковая сортировка, сортировка выбором, сортировка вставками.
 Algorithms whose time complexity grows quadratically with the size of the input. 
 Examples include nested loops where each loop iterates over the size of the input.
 6. Кубические (Cubic): O(n^3)   - трёхмерные массивы
@@ -27,7 +28,7 @@ int n = int.Parse(Console.ReadLine()!), result = 0; // this one works faster
 // So the input won't be null. And the warning disappears.
 // int n Convert.ToInt32(Console.ReadLine()); // this one works slower
 // ["123"] -> 123 -> [123]  Преобразовывается значение и записывается в новую ячейку памяти.
-for(int i = 1; i <= n; i++) // O(n)
+for (int i = 1; i <= n; i++) // O(n)
     result += i;
 Console.WriteLine($"Sum of numbers from 1 to {n} equals {result}");
 
