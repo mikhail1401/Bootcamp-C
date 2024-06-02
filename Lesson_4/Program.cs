@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-// Bubble sort - Пузырьковая сортировка
+// Bubble sort O(n^2) - Пузырьковая сортировка
 
 // Creating a Unit test that will verify whether an array is sorted
 bool Check(int[] array)
