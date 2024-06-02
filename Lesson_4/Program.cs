@@ -25,15 +25,18 @@ for (int i = 0; i < n; i++)
 
 // Making a few copies of the array
 int[] array1 = new int [n];
-int[] array2 = new int[n];
+int[] array2 = new int [n];
+int[] array3 = new int [n];
 
 Array.Copy(array, array1, n);
 Array.Copy(array, array2, n);
+Array.Copy(array, array3, n);
 
 Console.Write("Our initial array: ");
 Console.WriteLine($"[{String.Join(", ", array)}]");
 
-// Creating a boolean to show sorted lists, so we can disble it when the lists a big
+// Creating a boolean to show sorted lists, 
+// so we can disable it when the lists a too big
 bool show = !true;
 
 // Creating a timer
@@ -88,3 +91,31 @@ sw.Stop();
 Console.WriteLine($"Algorithm II - {Check(array2)} {sw.ElapsedMilliseconds}ms");
 if (show) Console.WriteLine($"[{String.Join(", ", array2)}]");
 
+
+// III. Refined algorithm. O((n-1)^2 / 2), but terminates early (once sorted)
+sw.Reset();
+sw.Start();
+
+for (int k = 0; k < n - 1; k++) // each outer loop iteration represents one pass
+{
+    bool check = true;
+    for (int i = 0; i < n - 1 - k; i++) // iterates over unsorted portion of array
+    {
+        if (array3[i] > array3[i+1])
+        {
+            check = false;
+            int temp = array3[i];
+            array3[i] = array3[i+1];
+            array3[i+1] = temp;
+        }
+    }
+    if (check) break; // after each pass of inner iteration the 'check' variable
+    // is checked. If it's still 'true', it means that no swaps were made
+    // during the pass, indicating that the array is already sorted.
+    // In this case the outer loop is terminated using the 'break' statement.
+}
+
+sw.Stop();
+
+Console.WriteLine($"Algorithm III - {Check(array3)} {sw.ElapsedMilliseconds}ms");
+if (show) Console.WriteLine($"[{String.Join(", ", array3)}]");
