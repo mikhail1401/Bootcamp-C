@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mfedotov.TRADEZERO\\OneDrive - TradeZero\\Documents\\Personal Documents\\Studying\\C#\\Bootcamp\\Lesson_3\\Lesson_3.csproj": {}
+    "C:\\Users\\mfedotov.TRADEZERO\\OneDrive - TradeZero\\Documents\\Personal Documents\\Studying\\C#\\Bootcamp\\Lesson_3_SelectionSort\\Lesson_3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mfedotov.TRADEZERO\\OneDrive - TradeZero\\Documents\\Personal Documents\\Studying\\C#\\Bootcamp\\Lesson_3\\Lesson_3.csproj": {
+    "C:\\Users\\mfedotov.TRADEZERO\\OneDrive - TradeZero\\Documents\\Personal Documents\\Studying\\C#\\Bootcamp\\Lesson_3_SelectionSort\\Lesson_3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mfedotov.TRADEZERO\\OneDrive - TradeZero\\Documents\\Personal Documents\\Studying\\C#\\Bootcamp\\Lesson_3\\Lesson_3.csproj",
+        "projectUniqueName": "C:\\Users\\mfedotov.TRADEZERO\\OneDrive - TradeZero\\Documents\\Personal Documents\\Studying\\C#\\Bootcamp\\Lesson_3_SelectionSort\\Lesson_3.csproj",
         "projectName": "Lesson_3",
-        "projectPath": "C:\\Users\\mfedotov.TRADEZERO\\OneDrive - TradeZero\\Documents\\Personal Documents\\Studying\\C#\\Bootcamp\\Lesson_3\\Lesson_3.csproj",
+        "projectPath": "C:\\Users\\mfedotov.TRADEZERO\\OneDrive - TradeZero\\Documents\\Personal Documents\\Studying\\C#\\Bootcamp\\Lesson_3_SelectionSort\\Lesson_3.csproj",
         "packagesPath": "C:\\Users\\mfedotov.TRADEZERO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mfedotov.TRADEZERO\\OneDrive - TradeZero\\Documents\\Personal Documents\\Studying\\C#\\Bootcamp\\Lesson_3\\obj\\",
+        "outputPath": "C:\\Users\\mfedotov.TRADEZERO\\OneDrive - TradeZero\\Documents\\Personal Documents\\Studying\\C#\\Bootcamp\\Lesson_3_SelectionSort\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
