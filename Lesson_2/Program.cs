@@ -44,7 +44,7 @@ Console.WriteLine("\nFinding an array's sum by sorting it first - " +
 // Result: O(n * log2(n)) + O(1)
 
 // But n < (n * log2(n)) + 1
-// Which means that complex algotithms are now always more efficient
+// Which means that complex algotithms are not always more efficient
 
 
 // O(n^2)
