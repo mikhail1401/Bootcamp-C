@@ -74,7 +74,7 @@ Console.WriteLine($"Initial array: [{string.Join(", ", array)}]");
 Console.WriteLine($"Final array: [{string.Join(", ", quickSort(array, 0, array.Length - 1))}]");
 
 /*
-Exlanation of the quicoSort() method.
+Exlanation of the quickSort() method.
 array = [-8, 19, 6, 12, 15]
 
 1: 
