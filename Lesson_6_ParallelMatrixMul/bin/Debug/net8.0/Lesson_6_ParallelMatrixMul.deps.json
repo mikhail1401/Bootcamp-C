@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Lesson_6_ParallelMatrixMul/1.0.0": {
+        "runtime": {
+          "Lesson_6_ParallelMatrixMul.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Lesson_6_ParallelMatrixMul/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
