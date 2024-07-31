@@ -1,4 +1,5 @@
-﻿const int N = 1000; // matrix size; const because this parameter will never change
+﻿const int N = 1001; // matrix size; const because this parameter will never change
+const int THREADS_NUMBER = 4; // задаем кол-во потоков
 // const variables are written in CAPITAL letters (e.g. const int PI)
 
 int[,] serialMulRes = new int[N, N]; // результат выполнения умножения матриц в однопотоке
@@ -6,6 +7,8 @@ int[,] threadMulRes = new int[N, N]; // результат параллельн�
 
 int[,] firstMatrix = MatrixGenerator(N, N);
 int[,] secondMatrix = MatrixGenerator(N, N);
+
+SerialMatrixMultiplication(firstMatrix, secondMatrix);
 
 int[,] MatrixGenerator(int rows, int columns)
 {
@@ -25,20 +28,44 @@ void SerialMatrixMultiplication(int[,] matrix1, int[,] matrix2)
 {
     if (matrix1.GetLength(1) != matrix2.GetLength(0)) throw Exception("Matrices multiplication is impossible");
 
-    else
+    // 2 matrices can be multipled via 3 loops:
+    for (int row = 0; row < matrix1.GetLength(0); row++)
     {
-        // 2 matrices can be multipled via 3 loops:
-        for (int row = 0; row < matrix1.GetLength(0); row++)
+        for (int column = 0; column < matrix2.GetLength(1); column++)
         {
-            for (int column = 0; column < matrix2.GetLength(1); column++)
+            for (int column1OrRow2 = 0; column1OrRow2 < matrix2.GetLength(0); column1OrRow2++)
             {
-                for (int column1OrRow2 = 0; column1OrRow2 < matrix1.GetLength(1); column1OrRow2++)
-                {
-                    serialMulRes[row, column] += matrix1[row, column1OrRow2] * matrix2[column1OrRow2, column];
-                }
+                serialMulRes[row, column] += matrix1[row, column1OrRow2] * matrix2[column1OrRow2, column];
             }
         }
     }
 }
 
-// Continue from 17:50
+void PrepareParallelMatrixMul(int[,] matrix1, int[,] matrix2)
+{
+    if (matrix1.GetLength(1) != matrix2.GetLength(0)) throw Exception("Matrices multiplication is impossible");
+
+    int eachThreadNumber = N / THREADS_NUMBER; // сколько вычислений будет приходиться на каждый поток
+    var threadsList = new List<Thread>(); // this is a dynamic version of an array
+    for (int i = 0; i < THREADS_NUMBER; i++)
+    {
+        int startPos = i * eachThreadNumber;
+        int endPos = (i + 1) * eachThreadNumber;
+        if (i == THREADS_NUMBER - 1) endPos = N;
+        threadsList.Add(new Thread() => )
+    }
+}
+
+void ParallelMatrixMultiplication(int[,] matrix1, int[,] matrix2, int startPos, int endPos)
+{
+    for (int row = 0; row < matrix1.GetLength(0); row++)
+    {
+        for (int column = 0; column < matrix2.GetLength(1); column++)
+        {
+            for (int column1OrRow2 = 0; column1OrRow2 < matrix2.GetLength(0); column1OrRow2++)
+            {
+                serialMulRes[row, column] += matrix1[row, column1OrRow2] * matrix2[column1OrRow2, column];
+            }
+        }
+    }
+}
