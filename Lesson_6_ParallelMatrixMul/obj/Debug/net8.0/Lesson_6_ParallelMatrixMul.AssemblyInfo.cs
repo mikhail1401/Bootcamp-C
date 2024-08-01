@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lesson_6_ParallelMatrixMul")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bf947195a5264c4bbe4ba32f8610455d97d7670")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f9e4b4d355239499e9b79b5caf6e37078895a95")]
 [assembly: System.Reflection.AssemblyProductAttribute("Lesson_6_ParallelMatrixMul")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Lesson_6_ParallelMatrixMul")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
