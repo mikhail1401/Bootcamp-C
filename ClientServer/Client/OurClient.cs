@@ -27,7 +27,7 @@ namespace Client
                 Console.Write("> ");
                 string message = Console.ReadLine();
                 sWriter.WriteLine(message); // the message is prepared for sending
-                sWriter.Flush();    // send the message immidiately
+                sWriter.Flush();    // send the message immediately
 
                 string answerServer = sReader.ReadLine();
                 Console.WriteLine($"Server replied -> {answerServer}");

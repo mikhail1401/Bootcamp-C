@@ -40,8 +40,8 @@ namespace Server
                 Console.WriteLine($"Client wrote - {clientMessage}");
 
                 string answer = Console.ReadLine();
-                sWriter.WriteLine(answer);
-                sWriter.Flush();
+                sWriter.WriteLine(answer);  // the message is prepared to send
+                sWriter.Flush();    // sending the message
             }
         }
     }
