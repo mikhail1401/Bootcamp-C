@@ -43,9 +43,12 @@ Console.WriteLine(string.Join(", ", array2));
 
 // Let's upgrade the algorithm for arrays containing numbers bigger than "9"
 
-void CountingSortExtended(int[] inputArray)
+int[] CountingSortExtended(int[] inputArray)
 {
-    int[] counter = new int[21];
+    int max = inputArray.Max();
+
+    int[] sortedArray = new int[inputArray.Length];
+    int[] counter = new int[max + 1];
 
     for (int i = 0; i < inputArray.Length; i++)
     {
@@ -57,12 +60,13 @@ void CountingSortExtended(int[] inputArray)
     {
         for (int j = 0; j < counter[i]; j++)
         {
-            inputArray[index] = i;
+            sortedArray[index] = i;
             index++;
         }
     }
+
+    return sortedArray;
 }
 
-int[] array3 = {20, 19, 18, 17, 6, 5, 4, 0};
-CountingSortExtended(array3);
-Console.WriteLine(string.Join(", ", array3));
+int[] array3 = {20, 19, 18, 5, 4, 0};
+Console.WriteLine(string.Join(", ", (CountingSortExtended(array3))));
