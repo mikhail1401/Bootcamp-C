@@ -70,3 +70,48 @@ int[] CountingSortExtended(int[] inputArray)
 
 int[] array3 = {20, 19, 18, 5, 4, 0};
 Console.WriteLine(string.Join(", ", (CountingSortExtended(array3))));
+
+
+// Let's enhance the algorithm for arrays containing numbers smaller than 0
+
+int[] array4 = {-10, 5, -9, 4, 0};
+// offset = 0 - min = 0 -(-10) = 10
+// Thus, counters[max + offset + 1]
+
+int[] CountingSortUniversal(int[] inputArray)
+{
+    int max = inputArray.Max();
+    int min = inputArray.Min();
+
+    int[] sortedArray = new int[inputArray.Length];
+    int[] counter;
+
+    if (min < 0)
+    {
+        int offset = 0 - min;
+        counter = new int[offset + max + 1];
+    }
+    else
+    {
+        counter = new int[max + 1];
+    }
+
+    for (int i = 0; i < inputArray.Length; i++)
+    {
+        counter[inputArray[i] - min]++;
+    }
+
+    int index = 0;
+    for (int i = 0; i < counter.Length; i++)
+    {
+        for (int j = 0; j < counter[i]; j++)
+        {
+            sortedArray[index] = i + min;
+            index++;
+        }
+    }
+
+    return sortedArray;
+}
+
+Console.WriteLine(string.Join(", ", CountingSortUniversal(array4)));
