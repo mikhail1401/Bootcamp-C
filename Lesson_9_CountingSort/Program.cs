@@ -109,3 +109,5 @@ int[] CountingSortUniversal(int[] inputArray)
 Console.WriteLine(string.Join(", ", CountingSortUniversal(array4)));
 
 
+// This algorithm works fast if the difference between the Max and Min elements
+// of the array is not higher than the array's length.
