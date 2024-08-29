@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lesson_9_CountingSort")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+090954724e662c42278c0308f6c32d4302aa7c1d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+773c4ff01ebd93ec861c8c6a4362c57f5221626c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Lesson_9_CountingSort")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Lesson_9_CountingSort")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
