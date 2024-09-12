@@ -80,7 +80,10 @@ void ParallelCountingSort(int[] inputArray, int[] counter, int offset, int start
 {
     for (int i = startPos; i < endPos; i++)
     {
-        counter[inputArray[i] + offset]++;
+        lock (locker)   // Until Thread 1 is finished, Thread 2 will wait
+        {
+          counter[inputArray[i] + offset]++;
+        }
     }
 }
 
