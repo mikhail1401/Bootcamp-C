@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lesson_10(14)_RaceConditionInParallelComputing")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f7a08e62036c42359fb789429fe45bdf367e00c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce84cb38bc71a521968ca915a5250b7943f05439")]
 [assembly: System.Reflection.AssemblyProductAttribute("Lesson_10(14)_RaceConditionInParallelComputing")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Lesson_10(14)_RaceConditionInParallelComputing")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

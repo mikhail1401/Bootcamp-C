@@ -21,7 +21,7 @@ const int THREADS_NUMBER = 4;   // число потоков
 const int N = 100000;   // размер массива
 
 // Creating a locker to avoid race condition
-object locker = new object();   // object is the base type. Its a universal type, capable of holding any kind of data.
+object lock_object = new object();   // object is the base type. Its a universal type, capable of holding any kind of data.
 
 // Creating a random array with random numbers
 Random rand = new Random();
@@ -80,7 +80,7 @@ void ParallelCountingSort(int[] inputArray, int[] counter, int offset, int start
 {
     for (int i = startPos; i < endPos; i++)
     {
-        lock (locker)   // Until Thread 1 is finished, Thread 2 will wait
+        lock (lock_object)   // Until Thread 1 is finished, Thread 2 will wait
         {
           counter[inputArray[i] + offset]++;
         }
