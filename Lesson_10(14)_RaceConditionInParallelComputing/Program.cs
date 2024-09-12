@@ -20,22 +20,92 @@ and only after that will it proceed to make its own update. */
 const int THREADS_NUMBER = 4;   // число потоков
 const int N = 100000;   // размер массива
 
+// Creating a locker to avoid race condition
+object locker = new object();   // object is the base type. Its a universal type, capable of holding any kind of data.
+
 // Creating a random array with random numbers
 Random rand = new Random();
-int[] arr = new int[N].Select(r => rand.Next(0, 5)).ToArray();
+int[] array = new int[N].Select(r => rand.Next(0, 5)).ToArray();
+
+int[] resultSerial = new int[N];
+int[] resultParallel = new int[N];
+
+Array.Copy(array, resultSerial, N);
+Array.Copy(array, resultParallel, N);
 
 
-int[] array = {-10, -5, -9, 0, 2, 5, 1, 3, 1, 0, 1};
-
-int[] CountingSort(int[] inputArray)
+void PrepareParallelCountingSort(int[] inputArray)
 {
     int max = inputArray.Max();
     int min = inputArray.Min();
 
-    int[] sortedArray = new int[inputArray.Length];
+    int offset = -min;
+    int[] counter = new int[max + offset + 1];
 
-    int offset = 0 - min; // 10
-    int[] counter = new int[offset + max + 1]; // 16
+    int eachThreadRange = N / THREADS_NUMBER;
+    var threadsParallel = new List<Thread>();
+
+    for (int i = 0; i < THREADS_NUMBER; i++)
+    {
+        int startPos = i * eachThreadRange;
+        int endPos = (i + 1) * eachThreadRange;
+        if (i == THREADS_NUMBER - 1) endPos = N; // for the remainder
+
+        // Syntax for a thread performing cerain fucntion
+        threadsParallel.Add(new Thread(() => ParallelCountingSort(inputArray, counter, offset, startPos, endPos)));
+        // Starting the thread
+        threadsParallel[i].Start();
+    }
+
+    // To ensure that all threads comlete their work before the next step in the program is executed
+    foreach(var thread in threadsParallel)
+    {
+        thread.Join();
+    }
+
+    // Forming a sorted array. It won't be paralleled
+    int index = 0;
+    for (int i = 0; i < counter.Length; i++)
+    {
+        for (int j = 0; j < counter[i]; j++)
+        {
+            inputArray[index] = i - offset;
+            index++;
+        }
+    }
+}
+
+
+void ParallelCountingSort(int[] inputArray, int[] counter, int offset, int startPos, int endPos)
+{
+    for (int i = startPos; i < endPos; i++)
+    {
+        counter[inputArray[i] + offset]++;
+    }
+}
+
+
+bool EqualityMatrix(int[] firstMatrix, int[] secondMatrix)
+{
+    bool result = true;
+
+    for (int i = 0; i < N; i++)
+    {
+        result = result && (firstMatrix[i] == secondMatrix[i]);
+    }
+
+    return result;
+}
+
+
+// Regular serial Counting Sort function
+void CountingSort(int[] inputArray)
+{
+    int max = inputArray.Max();
+    int min = inputArray.Min();
+
+    int offset = -min;
+    int[] counter = new int[offset + max + 1];
 
     for (int i = 0; i < inputArray.Length; i++)
     {
@@ -47,14 +117,14 @@ int[] CountingSort(int[] inputArray)
     {
         for (int j = 0; j < counter[i]; j++)
         {
-            sortedArray[index] = i - offset;
+            inputArray[index] = i - offset;
             index++;
         }
     }
-
-    return sortedArray;
 }
 
-// Continue from 19:00
 
+CountingSort(resultSerial);
+PrepareParallelCountingSort(resultParallel);
+Console.WriteLine(EqualityMatrix(resultSerial, resultParallel));
 
